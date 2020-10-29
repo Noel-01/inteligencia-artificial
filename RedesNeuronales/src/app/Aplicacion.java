@@ -5,16 +5,31 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Aplicacion {
+import redes.IHM;
+import redes.Sistema;
+
+public class Aplicacion implements IHM{
 	
 	public static void main(String [] args) {
 		Aplicacion app = new Aplicacion();
 		System.out.println("Arrancado");
+        app.lanzar();
 	}
 	
 	protected void lanzar() {
-		String[] contenido = leerArchivo("abalone_norm.txt", false);
-		//Añadir sistema
+        // Problema del XOR
+        /*String[] contenido = leerArchivo("xor.txt", true);
+        Sistema sistema = new Sistema(2, 2, 1, contenido, 1.0, this);
+        sistema.Lanzar();*/
+        
+        // Problema Abalone
+		// Añadir sistema
+        // Problema Abalone
+        String[] contenido = leerArchivo("abalone_norm.txt", false);
+        Sistema sistema = new Sistema(10, 4, 1, contenido, 0.8, this);
+        sistema.setTasaAprendizaje(0.1);
+        sistema.setNumIteracionesMax(50000);
+        sistema.Lanzar();
 	}
 	
 	protected String[] leerArchivo(String nombreArchivo, boolean eliminarEncabezado) {
@@ -40,9 +55,11 @@ public class Aplicacion {
 		}
 	}
 	
-//    @Override
+    @Override
     public void mostrarMensaje(String msg) {
         System.out.println(msg);
     }
+
+
 
 }
