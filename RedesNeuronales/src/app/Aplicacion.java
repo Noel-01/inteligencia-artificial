@@ -18,18 +18,18 @@ public class Aplicacion implements IHM{
 	
 	protected void lanzar() {
         // Problema del XOR
-        /*String[] contenido = leerArchivo("xor.txt", true);
+        String[] contenido = leerArchivo("xor.txt", true);
         Sistema sistema = new Sistema(2, 2, 1, contenido, 1.0, this);
-        sistema.Lanzar();*/
+        sistema.Lanzar();
         
         // Problema Abalone
 		// Añadir sistema
         // Problema Abalone
-        String[] contenido = leerArchivo("abalone_norm.txt", false);
+       /* String[] contenido = leerArchivo("abalone_norm.txt", false);
         Sistema sistema = new Sistema(10, 4, 1, contenido, 0.8, this);
         sistema.setTasaAprendizaje(0.1);
         sistema.setNumIteracionesMax(50000);
-        sistema.Lanzar();
+        sistema.Lanzar();*/
 	}
 	
 	protected String[] leerArchivo(String nombreArchivo, boolean eliminarEncabezado) {
